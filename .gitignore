@@ -16,3 +16,5 @@ planning.txt
 workspace.js
 sw.*
 .env
+
+config/development.js

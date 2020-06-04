@@ -58,7 +58,7 @@ module.exports = {
             "@nuxtjs/dotenv"
           ],
   axios: {
-    baseURL: process.env.BASE_URL || "https://nuxt-course-project-e6cd3.firebaseio.com/",
+    baseURL: process.env.BASE_URL || "https://chrisbemister83.firebaseio.com/",
     credentials: false
   },
   workbox: {
@@ -85,8 +85,14 @@ module.exports = {
     extend(config, ctx) {}
   },
   env: {
-    baseUrl: process.env.BASE_URL || "https://nuxt-course-project-e6cd3.firebaseio.com/",
-    apiKey: process.env.apiKey
+    baseUrl: process.env.BASE_URL || "https://chrisbemister83.firebaseio.com",
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
+    nodeEnv: process.env.NODE_ENV
   },
   transition: {
     name: "fade",
@@ -99,7 +105,7 @@ module.exports = {
   generate: {
     routes: function() {
       return axios
-        .get("https://nuxt-course-project-e6cd3.firebaseio.com/posts.json")
+        .get("https://chrisbemister83.firebaseio.com/posts.json")
         .then(res => {
           const routes = [];
           for (const key in res.data) {
